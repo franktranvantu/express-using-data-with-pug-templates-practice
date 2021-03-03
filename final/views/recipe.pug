@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  a(href='/') ← Back to recipes
+  //- 1. Dynamically display a recipe name
+  h1= cecipe.recipe_name
+
+  //- 2. Render the `src` attribute using the `image_url` property
+  img(src='#{recipe.image_url}' width='320' height='240')
+
+  //- 3. Dynamically display a recipe description
+  p= recipe.description
+
+  h2 Ingredients
+  ul
+    //- 4. Use Pug's `each` iterator to render an `<li>` for each ingredient
+    each ingredient in ingredients
+    li= ingredient[0]
+    li= ingredient[1]
+    li= ingredient[2]
+    li= ingredient[3]
+
+  h2 Steps
+  ol
+    //- 5. Use an iterator to render an `<li>` for each recipe step
+    each step in steps
+    li= step[0]
+    li= step[1]
+    li= step[2]
+    li= step[3]
+    li= step[4]
+    li= step[5]
+    li= step[6]
+    li= step[7]
